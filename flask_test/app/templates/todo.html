@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todoリスト</title>
+        <style type="text/css">
+            .title {
+                color: blue;
+                text-align: center;
+                fontsize:1000px;
+
+            }
+            body {
+                background:#b0c4de;
+            }
+            .form_text {
+                width:600px;
+                height:30px;
+            }
+            .form_deadline {
+                width:600px;
+                height:30px;
+            }
+            .form_submit {
+                width:100px;
+                height:30px;
+            }
+            .form_delete {
+                width:70px;
+                height:30px;
+            }
+             .main_title {
+
+                 color: #FFFF00;
+                 text-align: center;
+             }
+             .deadline {
+
+                 color: #FFFF00;
+                 text-align: center;
+             }
+             .date {
+
+                 color: #FFFF00;
+                 text-align: center;
+             }
+             table {
+                 width:1300px;
+             }
+
+
+
+        </style>
+
+    </head>
+    <body>
+    <h1 class="title">Todoリスト</h1>
+
+    <form class="form_add" action="/add" method="post">
+        <input class="form_text" type="text" name="title"placeholder="内容">
+        <input class="form_deadline" type="date" name="deadline" placeholder="締め切り">
+        <input class="form_submit" type="submit" value="+">
+    </form>
+
+    <form action="/delete" method="post" id="delete">
+        <p>
+        <input class="form_delete" type="submit" value="Delete">
+        </p>
+    </form>
+
+    <table class="table">
+        <tr>
+            <th></th>
+            <th class="main_title">内容</th>
+            <th class="deadline">締切日</th>
+            <th class="date">登録日</th>
+
+        </tr>
+        <tr>
+        {% for todo in all_todo %}
+            <th>
+                <input class="main_checkbox" type="checkbox" name="delete" form="delete" value={{todo.id}}>
+            </th>
+
+            <th>{{todo.title}}</th>
+            <th>{{todo.deadline}}</th>
+            <th>{{todo.date}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
