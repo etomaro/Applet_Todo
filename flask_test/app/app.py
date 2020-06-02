@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, url_for ,Response ,abort # クエストリングを受け取るモジュール
 from werkzeug.utils import redirect
 
-from model.models import main
-from model.database import db_session
+from flask_test.model.models import main
+from flask_test.model.database import db_session
 from datetime import datetime
 from flask_login import login_user, logout_user, LoginManager, UserMixin, login_required
 from collections import defaultdict
