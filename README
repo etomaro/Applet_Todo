@@ -1,0 +1,17 @@
+環境
+python==3.82
+Flask==1.12
+Flask-Login==0.5.0
+Flask-SQLAlchemy==2.4.1
+SQLAlchemy==1.3.16
+Sqlite3
+PyCharm 2019.3.4
+
+
+ログインページ工事中
+利用される方は
+
+user user01
+password password
+
+でログインしてください。
